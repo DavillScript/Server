@@ -1,3 +1,4 @@
+$r =  str_repeat("\033[1;95m~", 53)."\n";
 function server(){
   pil:
     print "\033[1;92m1. Claimbits\n";
