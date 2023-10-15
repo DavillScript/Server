@@ -1,5 +1,5 @@
-$r =  str_repeat("\033[1;95m~", 53)."\n";
 function server(){
+  $r =  str_repeat("\033[1;95m~", 53)."\n";
   pil:
     print "\033[1;92m1. Claimbits\n";
     print "\033[1;92m2. Claimfreecoins\n";
