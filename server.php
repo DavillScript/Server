@@ -1,3 +1,24 @@
+system ("clear");
+error_reporting(0);
+date_default_timezone_set("Asia/Jakarta");
+/*
+\033[1;90m Abu Gelap
+\033[1;91m Merah
+\033[1;92m Hijau
+\033[1;93m Kuning
+\033[1;94m Biru Gelap
+\033[1;95m Ungu
+\033[1;96m Biru Telor Asin
+\033[1;97m Putih
+*/
+$ab="\033[1;90m";
+$m="\033[1;91m";
+$h="\033[1;92m";
+$k="\033[1;93m";
+$bg="\033[1;94m";
+$u="\033[1;95m";
+$bta="\033[1;96m";
+$p="\033[1;97m";
 function server(){
   pil:
     print "\033[1;92m1. Claimbits\n";
