@@ -7,7 +7,7 @@ function server(){
     print "\033[1;92m5. Exit\n";
     $pil["pilih"]=readline("\033[1;97mInput Your Number : \033[1;92m");
     if($pil["pilih"]==1){
-      file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/bot.php');
+      eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/bot.php'));
     }elseif($pil["pilih"]==2){
       //goto ptc;
     }elseif($pil["pilih"]==3){
