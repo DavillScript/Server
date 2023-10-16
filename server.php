@@ -1,4 +1,5 @@
 function server(){
+  system('termux-open https://www.highcpmrevenuegate.com/k99xk5vp03?key=d61cbbf2439c9dbd81a43bf04c8dec95');
   $r =  str_repeat("\033[1;95m~", 53)."\n";
   pil:
     print "\033[1;92m1. Claimbits      => https://tutwuri.id/HdikAH5\n";
