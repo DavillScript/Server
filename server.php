@@ -15,7 +15,7 @@ function server(){
     }elseif($pil["pilih"]==3){
       eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Faucetpk'));
     }elseif($pil["pilih"]==4){
-      //goto auto;
+      eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Balkanofaucet'));
     }elseif($pil["pilih"]==5){
       exit;
     }else{
