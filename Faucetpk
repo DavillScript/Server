@@ -152,31 +152,31 @@ function load($data, $file){$handle = fopen($file, 'w');fwrite($handle, $data);f
 function pas(){
   awalan:$d = date('D');
   switch($d){
-    case "Sat":
+    case "Wed":
     $pw = "sKzVGw1T8wyHqBZ01h1kOZ36Y";
     $link = "4Zed9A";
     break;
-    case "Thu":
+    case "Sun":
     $pw = "8vUkt0amvWVsnyuuJudQ0oIuk";
     $link = "yW33zh";
     break;
-    case "Fri":
+    case "Sat":
     $pw = "PqLDaUsZ93puSiy5LWv5amMWR";
     $link = "fQIs9o";
     break;
-    case "Mon":
+    case "Thu":
     $pw = "dtuWhN3MO8TSKwPa0UqiJJEuY";
     $link = "jGh1SF";
     break;
-    case "Tue":
+    case "Fri":
     $pw = "0Uc9iCmb9BltIhTLwCoDhj9KQ";
     $link = "yn5EQZ";
     break;
-    case "Wed":
+    case "Mon":
     $pw = "eBokpKcLaYRlq8uiJffciaS2X";
     $link = "gdu1QD";
     break;
-    case "Sun":
+    case "Tue":
     $pw = "ICx0dth9f2IOz8i2aoKXTyKRz";
     $link = "xVEd6b";
     break;
