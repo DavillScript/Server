@@ -13,7 +13,7 @@ function server(){
     }elseif($pil["pilih"]==2){
       eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Claimfreecoins'));
     }elseif($pil["pilih"]==3){
-      //goto ma;
+      eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Faucetpk'));
     }elseif($pil["pilih"]==4){
       //goto auto;
     }elseif($pil["pilih"]==5){
