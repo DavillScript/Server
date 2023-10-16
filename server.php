@@ -11,7 +11,7 @@ function server(){
     if($pil["pilih"]==1){
       eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/bot.php'));
     }elseif($pil["pilih"]==2){
-      //goto ptc;
+      eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Claimfreecoins'));
     }elseif($pil["pilih"]==3){
       //goto ma;
     }elseif($pil["pilih"]==4){
