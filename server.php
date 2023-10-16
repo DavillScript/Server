@@ -3,7 +3,7 @@ function server(){
   pil:
     print "\033[1;92m1. Claimbits\n";
     print "\033[1;92m2. Claimfreecoins\n";
-    print "\033[1;92m3. Coinpayz\n";
+    print "\033[1;92m3. Faucetpk\n";
     print "\033[1;92m4. Balkanofaucet\n";
     print "\033[1;92m5. Exit\n";
     $pil["pilih"]=readline("\033[1;97mInput Your Number : \033[1;92m");
