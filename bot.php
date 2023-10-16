@@ -1,3 +1,4 @@
+<?php
 system ("clear");
 error_reporting(0);
 date_default_timezone_set("Asia/Jakarta");
@@ -210,7 +211,7 @@ function ban1(){
 function solve(){
   global $user;
   $ua=array("Host: api-secure.solvemedia.com","user-agent: $user","accept: */*");
-  $res=get("https://api-secure.solvemedia.com/papi/_challenge.js?k=6edlGGIdc0PEFRANZBtwekP94pzMDN9Y;f=_ACPuzzleUtil.callbacks%5B0%5D;l=en;t=img;s=standard;c=js,h5c,h5ct,svg,h5v,v/h264,v/webm,h5a,a/mp3,a/ogg,ua/chrome,ua/chrome91,os/android,os/android10,fwv/AWuZBA.ywpy26,jslib/jquery,htmlplus;am=Wqad-H37nPVbzQRpffuc9Q;ca=ajax;ts=1696529761;ct=1696529908;th=white;r=0.2755537520664464",$ua);
+  $res=get("https://api-secure.solvemedia.com/papi/_challenge.js?k=wd1aAAqnwuzQ7RBpq8ZKi7DWaMC3x3xe;f=_ACPuzzleUtil.callbacks%5B0%5D;l=en;t=img;s=standard;c=js,h5c,h5ct,svg,h5v,v/h264,v/webm,h5a,a/mp3,a/ogg,ua/chrome,ua/chrome117,os/android,os/android10,fwv/AWv6EA.zknn21,jslib/jquery,htmlplus;am=IRbsd60-Pi4gfRb-rT4-Lg;ca=ajax;ts=1696505461;ct=1696505580;th=white;r=0.3190512508994039",$ua);
   $challenge=explode('"',explode('"challenge":"',$res)[1])[0];
   $sol=get("https://api-secure.solvemedia.com/papi/media?c=$challenge;w=300;h=150;fg=000000;bg=f8f8f8",$ua);
   $img="image.png";
@@ -233,30 +234,30 @@ function solve(){
     echo "\033[1;91mplease wait                  \r";
   }
  }
-system("clear");
+/*system("clear");
 ban1();
 echo ("\033[1;97m Please Subscribe🙏\r");
 sleep(2);
 system('termux-open https://youtube.com/c/DavillCreative');
 echo ("\033[1;97m Thanks🙏                    \r");
 sleep(2);
-echo ("                        \r");
+echo ("                        \r");*/
 //onoff();
-pas();
+//pas();
 $user=Sav("User_agent");
 $cook=Sav("Cookie");
 b:
 system("clear");
 ban();
-print Slow("                \033[1;96m#claimbits.net#
+print Slow("                \033[1;96m#claimfreecoins.cc#
 \033[1;95m$r");
 echo slow($h."SC IS ON!! AND READY TO RUN. BY KURSIBIRU.....\n");
 echo slow("$r");
-$ua=array("Host: claimbits.net","X-Requested-With: XMLHttpRequest","user-agent: $user","cookie: $cook");
-$res=get("https://claimbits.net/faucet.html",$ua);
+$ua=array("Host: claimfreecoins.cc","X-Requested-With: XMLHttpRequest","user-agent: $user","cookie: $cook");
+$res=get("https://claimfreecoins.cc/faucet.html",$ua);
 $use=explode('</',explode('class="text-success">',$res)[1])[0];
 $bal=explode('</',explode('class="text-primary"><b>',$res)[1])[0];
-$bal2=explode('</',explode('class="text-warning"><b>',$res)[1])[0];
+$bal2=explode('</',explode('class="text-success"><b>',$res)[1])[0];
 echo slow($bta."[".$m."•".$bta."]".$h."Username : ".$p."$use\n");
 echo slow($bta."[".$m."•".$bta."]".$h."Balance : ".$p."$bal ".$u.">>".$k.">> ".$p."$bal2\n");
 echo slow("$l");
@@ -275,11 +276,11 @@ pilihan:
         goto pilihan;
       }
       faucet:
-        $res=get("https://claimbits.net/faucet.html",$ua);
+        $res=get("https://claimfreecoins.cc/faucet.html",$ua);
         $tk=explode("'",explode("var token = '",$res)[1])[0];
         $cap=solve();
         $data="a=getFaucet&token=$tk&captcha=0&$cap";
-        $res=post("https://claimbits.net/system/ajax.php",$data,$ua);
+        $res=post("https://claimfreecoins.cc/system/ajax.php",$data,$ua);
         $tim=explode('.<\/div>',explode('fa-exclamation-triangle fa-fw\"><\/i> ',$res)[1])[0];
         if($tim=="You already claimed your coins this hour"){
           goto tim;
@@ -287,9 +288,9 @@ pilihan:
         $suc=explode('<\/div>',explode('fa-check-circle fa-fw\"><\/i> Congratulations, ',$res)[1])[0];
         $su1=explode(' and',explode('Congratulations, your lucky number was ',$res)[1])[0];
         $su2=explode('<\/div>',explode('and you won ',$res)[1])[0];
-        $res=get("https://claimbits.net/faucet.html",$ua);
+        $res=get("https://claimfreecoins.cc/faucet.html",$ua);
         $bal=explode('</',explode('class="text-primary"><b>',$res)[1])[0];
-        $bal2=explode('</',explode('class="text-warning"><b>',$res)[1])[0];
+        $bal2=explode('</',explode('class="text-success"><b>',$res)[1])[0];
         if($suc==null){
           goto faucet;
         }else{
