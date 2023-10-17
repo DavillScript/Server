@@ -6,7 +6,8 @@ function server(){
     print "\033[1;92m2. Claimfreecoins => https://tutwuri.id/zuLacYmL\n";
     print "\033[1;92m3. Faucetpk       => https://tutwuri.id/1yNECie\n";
     print "\033[1;92m4. Balkanofaucet  => https://tutwuri.id/k7nDp\n";
-    print "\033[1;92m5. Exit\n";
+    print "\033[1;92m5. trxfarms       => https://tutwuri.id/2tGfg69W\n";
+    print "\033[1;92m6. Exit\n";
     $pil["pilih"]=readline("\033[1;97mInput Your Number : \033[1;92m");
     print"\033[1;95m$r";
     if($pil["pilih"]==1){
@@ -18,6 +19,8 @@ function server(){
     }elseif($pil["pilih"]==4){
       eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Balkanofaucet'));
     }elseif($pil["pilih"]==5){
+      eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/trxfarms'));
+    }elseif($pil["pilih"]==6){
       exit;
     }else{
       print slow("\033[1;91mwrong choice\n");
