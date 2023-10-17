@@ -124,35 +124,35 @@ function pas(){
 
   awalan:$d = date('D');
   switch($d){
-    case "Sat":
+    case "Thu":
     $pw = "sKzVGw1T8wyHqBZ01h1kOZ36Y";
     $link = "4Zed9A";
     break;
-    case "Thu":
+    case "Sat":
     $pw = "8vUkt0amvWVsnyuuJudQ0oIuk";
     $link = "yW33zh";
     break;
-    case "Fri":
+    case "Mon":
     $pw = "PqLDaUsZ93puSiy5LWv5amMWR";
     $link = "fQIs9o";
     break;
-    case "Mon":
+    case "Fri":
     $pw = "dtuWhN3MO8TSKwPa0UqiJJEuY";
     $link = "jGh1SF";
     break;
-    case "Tue":
+    case "Wed":
     $pw = "0Uc9iCmb9BltIhTLwCoDhj9KQ";
     $link = "yn5EQZ";
     break;
-    case "Wed":
+    case "Tue":
     $pw = "eBokpKcLaYRlq8uiJffciaS2X";
     $link = "gdu1QD";
     break;
-    case "Sun":
+    case "default":
     $pw = "ICx0dth9f2IOz8i2aoKXTyKRz";
     $link = "xVEd6b";
     break;
-    default:
+    Sun:
     $pw = "g3wHyJCGdYwZJ0fr1qFhlVWKv";
     $link = "P3O8j8";
     break;
