@@ -17,7 +17,8 @@ function server(){
     }elseif($pil["pilih"]==3){
       eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Faucetpk'));
     }elseif($pil["pilih"]==4){
-      eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Balkanofaucet'));
+       echo "\033[1;91mthis is script need update by: Yadi Supriyadi\n";
+      #eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Balkanofaucet'));
     }elseif($pil["pilih"]==5){
       eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/trxfarms'));
     }elseif($pil["pilih"]==6){
