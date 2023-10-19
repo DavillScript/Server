@@ -269,10 +269,10 @@ pilihan:
     goto pilihan;
   }
   mining:
-   echo $res=get("https://krkbtc.com/dashboard/mining.php","krkbtc.com");
+    $res=get("https://krkbtc.com/dashboard/mining.php","krkbtc.com");
     $tk=explode('"',explode('token: "',$res)[1])[0];
     $data="action=start&token=$tk";
-  echo  $res=post("https://krkbtc.com/dashboard/mining_ajax.php",$data,"krkbtc.com");
+    $res=post("https://krkbtc.com/dashboard/mining_ajax.php",$data,"krkbtc.com");
     $st=explode('"',explode('success":true,"action":"',$res)[1])[0];
     if($st==null){
       goto mining;
