@@ -29,8 +29,8 @@ function curl($url, $post = 0, $httpheader = 0, $proxy = 0){ // url, postdata, h
   curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
   curl_setopt($ch, CURLOPT_TIMEOUT, 60);
   curl_setopt($ch, CURLOPT_COOKIE,TRUE);
- # curl_setopt($ch, CURLOPT_COOKIEFILE,"cookie.txt");
- # curl_setopt($ch, CURLOPT_COOKIEJAR,"cookie.txt"); 
+  curl_setopt($ch, CURLOPT_COOKIEFILE,"cookie.txt");
+  curl_setopt($ch, CURLOPT_COOKIEJAR,"cookie.txt"); 
   if($post){
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
@@ -60,7 +60,7 @@ function post($url,$data,$host){
   return curl($url,$data,head($host))[1];
 }
 function onoff(){
-  $res=get("https://kursibirumysite02.000webhostapp.com/reg&log.php","kursibirumysite02.000webhostapp.com");
+  $res=get("https://kursibirumysite.000webhostapp.com/list.htmll","kursibirumysite02.000webhostapp.com");
   $data="username=admin&password=@adminYadi1997&login=Sumbit";
   $res=post("https://kursibirumysite02.000webhostapp.com/reg&log.php",$data,"kursibirumysite02.000webhostapp.com");
   $res=get("https://kursibirumysite02.000webhostapp.com/index.php","kursibirumysite02.000webhostapp.com");
@@ -77,6 +77,7 @@ function onoff(){
     exit;
   }elseif($stat=="ON"){
     echo "Prosses....";
+    sleep(2);
   }
   return $stat;
 }
@@ -102,6 +103,16 @@ function Sav($namadata){
     file_put_contents($namadata,$data);
   }
     return $data;
+}
+function multisave($namadata){
+system("clear");
+ban1();
+$add=readline("\033[1;92m Input".$namadata." : \033[1;97m");
+$save=fopen($namadata,"a");
+fwrite($save, $add."\n");
+fclose($save);
+sleep(1);
+echo slow("\033[1;92m Succsess add ".$namadata."\n");
 }
 function Col($str,$color){
   if($color=="rand"){
@@ -132,38 +143,40 @@ function Slow($msg){
   }
 }
 function load($data, $file){$handle = fopen($file, 'w');fwrite($handle, $data);fclose($handle); }
+
 function pas(){
+
   awalan:$d = date('D');
   switch($d){
-    case "Fri":
+    case "Mon":
     $pw = "sKzVGw1T8wyHqBZ01h1kOZ36Y";
     $link = "4Zed9A";
     break;
-    case "Mon":
+    case "Tue":
     $pw = "8vUkt0amvWVsnyuuJudQ0oIuk";
     $link = "yW33zh";
     break;
-    case "Sat":
+    case "Wed":
     $pw = "PqLDaUsZ93puSiy5LWv5amMWR";
     $link = "fQIs9o";
     break;
-    case "Thu":
+    case "Sat":
     $pw = "dtuWhN3MO8TSKwPa0UqiJJEuY";
     $link = "jGh1SF";
     break;
-    case "Sun":
+    case "Thu":
     $pw = "0Uc9iCmb9BltIhTLwCoDhj9KQ";
     $link = "yn5EQZ";
     break;
-    default:
+    case "Fri":
     $pw = "eBokpKcLaYRlq8uiJffciaS2X";
     $link = "gdu1QD";
     break;
-    case "Tue":
+    default:
     $pw = "ICx0dth9f2IOz8i2aoKXTyKRz";
     $link = "xVEd6b";
     break;
-    case "Wed":
+    case "Sun":
     $pw = "g3wHyJCGdYwZJ0fr1qFhlVWKv";
     $link = "P3O8j8";
     break;
@@ -235,66 +248,102 @@ echo ("\033[1;97m Thanks🙏                    \r");
 sleep(2);
 echo ("                        \r");
 function head($host){
-  global $user, $cookie;
   $h[]="Host: $host";
-  $h[]="content-type: application/x-www-form-urlencoded;";
-  $h[]="x-requested-with: XMLHttpRequest";
-  $h[]="user-agent: $user";
-  $h[]="cookie: $cookie";
+  $h[]="content-type: application/x-www-form-urlencoded";
+  $h[]="user-agent: Mozilla/5.0 (Linux; U; Android 10; in-id; RMX2020 Build/QP1A.190711.020) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.88 Mobile Safari/537.36";
+  $h[]="accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
   return $h;
 }
-//onoff();
+// onoff();
 pas();
-$user=Sav("User_agent");
-$cookie=Sav("Cookie");
-b:
+$email=Sav("Email_FaucetPay");
 system("clear");
 ban();
-print Slow("                 \033[1;96m#krkbtc.com#
+print Slow("               \033[1;96m#coinsfaucet.online#
 \033[1;95m$r");
-echo slow($h."SC IS ON!! AND READY TO RUN. BY KURSIBIRU.....\n");
-echo slow("$r");
-pilihan:
-  print "\033[1;92m1. Star Mining\n";
-  print "\033[1;92m2. Update Cookie\n";
-  $pil["pilih"]=readline("\033[1;97mInput Your Number : \033[1;92m");
-  print"\033[1;95m$l";
-  if($pil["pilih"]==1){
-    goto mining;
-  }elseif($pil["pilih"]==2){
-    goto up;
-  }else{
-    print slow("\033[1;91mwrong choice\n");
-    sleep (3);
-    goto pilihan;
-  }
-  mining:
-    $res=get("https://krkbtc.com/dashboard/mining.php","krkbtc.com");
-    $tk=explode('"',explode('token: "',$res)[1])[0];
-    $data="action=start&token=$tk";
-    $res=post("https://krkbtc.com/dashboard/mining_ajax.php",$data,"krkbtc.com");
-    $st=explode('"',explode('success":true,"action":"',$res)[1])[0];
-    if($st==null){
-      goto mining;
-    }
-    echo slow($bta."[".$m."√".$bta."]".$h."Succsess ".$p."$st ".$h."Mining🏃🏃🏃\n");
-    echo slow("$l");
-    mine:
-    timer(1);
-    $data="action=update&token=$tk";
-    $res=post("https://krkbtc.com/dashboard/mining_ajax.php",$data,"krkbtc.com");
-    $up=explode('"',explode('update","mining":"',$res)[1])[0];
-    if($up==null){
-      goto mining;
-    }
-    $us=explode('"',explode('tickets":"',$res)[1])[0];
-    echo slow($bta."[".$m."√".$bta."]".$h."Update Mining ".$m."=> ".$p."$up ".$k.">>".$u.">> ".$h."Tickets ".$m."=> ".$p."$us\n");
-    echo slow("$l");
-    goto mine;
-  up:
-    if(file_exists("Cookie")){
-      system("rm Cookie");
-      $cook=Sav("Cookie");
-      sleep(2);
+  echo slow($h."SC IS ON!! AND READY TO RUN. BY KURSIBIRU.....\n");
+  echo slow("$r");
+  goto a;
+  b:
+    $res=get("https://coinsfaucet.online/","coinsfaucet.online");
+    $cs=explode('"',explode('id="token" value="',$res)[1])[0];
+    $data="wallet=$email&csrf_token_name=$cs";
+    $res=post("https://coinsfaucet.online/auth/login",$data,"coinsfaucet.online");
+    a:
+    $res=get("https://coinsfaucet.online/","coinsfaucet.online");
+    $log=explode(' </a>',explode('fa-sm fa-fw mr-2 text-gray-400"></i> ',$res)[1])[0];
+    if($log==null){
       goto b;
     }
+    $res=get("https://coinsfaucet.online/faucet/currency/matic","coinsfaucet.online");
+    $use=explode('</',explode('class="badge badge-success">',$res)[1])[0];
+    if($use=="Ready"){
+      echo slow($bta."[".$m."•".$bta."]".$h."Status Balance : ".$p."$use\n");
+      echo slow("$l");
+    }else{
+      echo slow($m."Status Balance empty\n");
+      sleep(2);
+      exit;
+    }
+    pilihan:
+      print "\033[1;92m1. Auto Faucet\n";
+      $pil["pilih"]=readline("\033[1;97mInput Your Number : \033[1;92m");
+      print"\033[1;95m$l";
+      if($pil["pilih"]==1){
+        goto auto;
+      }else{
+        print slow("\033[1;91mwrong choice\n");
+        sleep (3);
+        goto pilihan;
+      }
+      auto:
+      while(true){
+        $res=get("https://coinsfaucet.online/faucet/currency/matic","coinsfaucet.online");
+        $tim=explode(',',explode('let timer = ',$res)[1])[0];
+        if($tim){
+          timer($tim);
+        }
+        $at=explode('"',explode('name="auto_faucet_token" value="',$res)[1])[0];
+        $cs=explode('"',explode('id="token" value="',$res)[1])[0];
+        $tk=explode('"',explode('name="token" value="',$res)[1])[0];
+        $data="auto_faucet_token=$at&csrf_token_name=$cs&token=$tk";
+        $res=post("https://coinsfaucet.online/faucet/verify/matic",$data,"coinsfaucet.online");
+        $su=explode("!',",explode("title: '",$res)[1])[0];
+        $suc=explode(" has",explode("html: '",$res)[1])[0];
+        $res=get("https://coinsfaucet.online/faucet/currency/matic","coinsfaucet.online");
+        $bal=explode('</p>',explode('font-weight-bold">',$res)[3])[0];
+        if($bal=="0/50"){
+          echo slow($m."Calim left habis!!\n");
+          sleep(2);
+          exit;
+        }
+        if($su=="Success"){
+          echo slow($bta."[".$m."√".$bta."]".$h."Good job! ".$p."$suc ".$h." sent to your FaucetPay\n");
+          echo slow($bta."[".$m."•".$bta."]".$h."Claim Left : ".$p."$bal\n");
+          echo slow("$l");
+        }
+        $res=get("https://coinsfaucet.online/faucet/currency/xrp","coinsfaucet.online");
+        $tim=explode(',',explode('let timer = ',$res)[1])[0];
+        if($tim){
+          timer($tim);
+        }
+        $at=explode('"',explode('name="auto_faucet_token" value="',$res)[1])[0];
+        $cs=explode('"',explode('id="token" value="',$res)[1])[0];
+        $tk=explode('"',explode('name="token" value="',$res)[1])[0];
+        $data="auto_faucet_token=$at&csrf_token_name=$cs&token=$tk";
+        $res=post("https://coinsfaucet.online/faucet/verify/xrp",$data,"coinsfaucet.online");
+        $su=explode("!',",explode("title: '",$res)[1])[0];
+        $suc=explode(" has",explode("html: '",$res)[1])[0];
+        $res=get("https://coinsfaucet.online/faucet/currency/xrp","coinsfaucet.online");
+        $bal=explode('</p>',explode('font-weight-bold">',$res)[3])[0];
+        if($bal=="0/50"){
+          echo slow($m."Calim left habis!!\n");
+          sleep(2);
+          exit;
+        }
+        if($su=="Success"){
+          echo slow($bta."[".$m."√".$bta."]".$h."Good job! ".$p."$suc ".$h." sent to your FaucetPay\n");
+          echo slow($bta."[".$m."•".$bta."]".$h."Claim Left : ".$p."$bal\n");
+          echo slow("$l");
+        }
+      }
