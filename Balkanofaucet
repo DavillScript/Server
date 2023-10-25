@@ -59,27 +59,6 @@ function get($url,$host){
 function post($url,$data,$host){
   return curl($url,$data,head($host))[1];
 }
-function onoff(){
-  $res=get("https://kursibirumysite02.000webhostapp.com/reg&log.php","kursibirumysite02.000webhostapp.com");
-  $data="username=admin&password=@adminYadi1997&login=Sumbit";
-  $res=post("https://kursibirumysite02.000webhostapp.com/reg&log.php",$data,"kursibirumysite02.000webhostapp.com");
-  $res=get("https://kursibirumysite02.000webhostapp.com/index.php","kursibirumysite02.000webhostapp.com");
-  $stat=explode('</b></p>',explode('<p>Status Script : <b>',$res)[1])[0];
-  if($stat=="OFF"){
-    system("clear");
-    ban1();
-    echo slow("\033[1;91mSC IS OFF!! NOT READY TO RUN. BY KURSIBIRU.....\n");
-    echo slow("$r");
-    sleep(2);
-    exit;
-  }elseif($stat==null){
-    echo slow("\033[1;91mGAGAL MEMUAT SCRIPT!!!\n");
-    exit;
-  }elseif($stat=="ON"){
-    echo "Prosses....";
-  }
-  return $stat;
-}
 function bot($a, $b, $c) {
   return[
       "+".$a."+".$c."+".$b,
@@ -146,68 +125,6 @@ function Slow($msg){
   foreach( $slow as $slowmo ){ 
     echo $slowmo; 
     usleep(555);
-  }
-}
-function load($data, $file){$handle = fopen($file, 'w');fwrite($handle, $data);fclose($handle); }
-function pas(){
-  awalan:$d = date('D');
-  switch($d){
-    case "Sat":
-    $pw = "sKzVGw1T8wyHqBZ01h1kOZ36Y";
-    $link = "4Zed9A";
-    break;
-    case "Thu":
-    $pw = "8vUkt0amvWVsnyuuJudQ0oIuk";
-    $link = "yW33zh";
-    break;
-    case "Fri":
-    $pw = "PqLDaUsZ93puSiy5LWv5amMWR";
-    $link = "fQIs9o";
-    break;
-    case "Mon":
-    $pw = "dtuWhN3MO8TSKwPa0UqiJJEuY";
-    $link = "jGh1SF";
-    break;
-    case "Tue":
-    $pw = "0Uc9iCmb9BltIhTLwCoDhj9KQ";
-    $link = "yn5EQZ";
-    break;
-    case "Wed":
-    $pw = "eBokpKcLaYRlq8uiJffciaS2X";
-    $link = "gdu1QD";
-    break;
-    case "Sun":
-    $pw = "ICx0dth9f2IOz8i2aoKXTyKRz";
-    $link = "xVEd6b";
-    break;
-    default:
-    $pw = "g3wHyJCGdYwZJ0fr1qFhlVWKv";
-    $link = "P3O8j8";
-    break;
-  }
-  $read = file_get_contents('key.txt');
-  if($read != $pw){
-    system ("clear");
-    ban1();
-    echo " \033[1;32mCode Password  \033[1;32m: \033[1;97m$link\n";
-    echo "\033[1;32m Link Password  : \033[1;97mhttps://kursibirumysite.000webhostapp.com/\n";
-    $p = readline(" \033[1;32mInput Password \033[1;32m: \033[1;97m");
-    if($p == $pw){
-      system ("clear");
-      ban1();
-      load($p, 'key.txt');
-      loading ("Ceking Password");
-      echo " \033[1;32mSuccessful Login To Script✓✓ \n";
-      sleep(1);
-      goto awalan;
-    }else{
-      system ("clear");
-      ban1();
-      loading ("Ceking Password");
-      echo " \033[1;31mWrong Password, Please Input again!\n";
-      sleep(1);
-      goto awalan;
-    }
   }
 }
 function ban1(){
@@ -278,8 +195,6 @@ function head($host){
   $h[]="accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9";
   return $h;
 }
-//onoff();
-pas();
 $email=Sav("Email");
 $pass=Sav("Password");
 system("clear");
@@ -292,7 +207,6 @@ goto a;
 b:
   $res=get("https://balkanofaucet.net/login","balkanofaucet.net");
   $csrf=explode('"',explode('name="csrf_token_name" value="',$res)[1])[0];
- # $cap=cap("https://ourcoincash.xyz/",$api,"6LfqFAcdAAAAAKWiUVv3EkT0le7pDL6lnsGfe5l6");
   $data="email=$email&password=$pass&captcha=recaptchav2&g-recaptcha-response=&csrf_token_name=$csrf";
   $res=post("https://balkanofaucet.net/auth/login",$data,"balkanofaucet.net");
   a:
@@ -327,7 +241,6 @@ b:
           }
           $cs=explode('"',explode('id="token" value="',$res)[1])[0];
           $tk=explode('"',explode('name="token" value="',$res)[1])[0];
-         # $cap=cap("https://ourcoincash.xyz/",$api,"6LfqFAcdAAAAAKWiUVv3EkT0le7pDL6lnsGfe5l6");
           $bot=bot(antb($res,1),antb($res,2),antb($res,3))[$i];
           $data="antibotlinks=$bot&csrf_token_name=$cs&token=$tk&captcha=recaptchav2&g-recaptcha-response=";
           $res=post("https://balkanofaucet.net/faucet/verify",$data,"balkanofaucet.net");
@@ -358,7 +271,6 @@ b:
             }
             $cs=explode('"',explode('name="csrf_token_name" value="',$res)[1])[0];
             $tk=explode('"',explode('name="token" value="',$res)[1])[0];
-          #  $cap=cap("https://ourcoincash.xyz/",$api,"6LfqFAcdAAAAAKWiUVv3EkT0le7pDL6lnsGfe5l6");
             $data="captcha=recaptchav2&g-recaptcha-response=&csrf_token_name=$cs&token=$tk";
             $res=post("https://balkanofaucet.net/ptc/verify/$pt",$data,"balkanofaucet.net");
             $lef=explode('</',explode('class="badge badge-primary">',$res)[1])[0];
