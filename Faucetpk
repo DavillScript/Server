@@ -76,18 +76,6 @@ function bot($a, $b, $c) {
    $bot = x('rel=\"','\"',$res,$no);
    return $bot;
   }
-function loading($str){
-  echo "\n";
-  $a = 100;
-  echo "\033[1;91m $str [\033[1;32m0%\033[1;97m] ████████████████████\r";
-  for($i=0;$i<$a;$i++){
-    $kon = intval($i/$a*100);
-    $kont = col(str_repeat('█',$kon/5),"rand");
-    echo "\033[1;91m $str [\033[1;32m".$kon."%\033[1;97m]\033[1;32m $kont\r";
-    usleep(55555);
-  }
-    echo "\033[1;97m $str [\033[1;32m100%\033[1;97m]\033[1;32m ████████████████████\r";
-}
 function Sav($namadata){
   if(file_exists($namadata)){
     $data = file_get_contents($namadata);
