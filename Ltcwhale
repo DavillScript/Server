@@ -161,7 +161,8 @@ function head($host){
 system("clear");
 ban();print Slow("                 \033[1;96m#ltcwhale.com#
 \033[1;95m$r");
-  echo slow($h."SC IS ON!! AND READY TO RUN. BY KURSIBIRU.....\n");
+  echo slow($h."SC IS OFF!! NOT WORK IN SERVER.....\n");
+  exit;
   echo slow("$r");
 if(file_exists("wallet")){
     $tkn = count(file("wallet"));
