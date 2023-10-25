@@ -40,27 +40,6 @@ function get($link,$ua){
 	curl_setopt($ch, CURLOPT_HEADER,0);
   return curl_exec($ch);
 }
-function onoff(){
-  $res=get("https://kursibirumysite02.000webhostapp.com/reg&log.php","kursibirumysite02.000webhostapp.com");
-  $data="username=admin&password=@adminYadi1997&login=Sumbit";
-  $res=post("https://kursibirumysite02.000webhostapp.com/reg&log.php",$data,"kursibirumysite02.000webhostapp.com");
-  $res=get("https://kursibirumysite02.000webhostapp.com/index.php","kursibirumysite02.000webhostapp.com");
-  $stat=explode('</b></p>',explode('<p>Status Script : <b>',$res)[1])[0];
-  if($stat=="OFF"){
-    system("clear");
-    ban1();
-    echo slow("\033[1;91mSC IS OFF!! NOT READY TO RUN. BY KURSIBIRU.....\n");
-    echo slow("$r");
-    sleep(2);
-    exit;
-  }elseif($stat==null){
-    echo slow("\033[1;91mGAGAL MEMUAT SCRIPT!!!\n");
-    exit;
-  }elseif($stat=="ON"){
-    echo "Prosses....";
-  }
-  return $stat;
-}
 function loading($str){
   echo "\n";
   $a = 100;
@@ -110,68 +89,6 @@ function Slow($msg){
   foreach( $slow as $slowmo ){ 
     echo $slowmo; 
     usleep(555);
-  }
-}
-function load($data, $file){$handle = fopen($file, 'w');fwrite($handle, $data);fclose($handle); }
-function pas(){
-  awalan:$d = date('D');
-  switch($d){
-    case "Sun":
-    $pw = "sKzVGw1T8wyHqBZ01h1kOZ36Y";
-    $link = "4Zed9A";
-    break;
-    case "Wed":
-    $pw = "8vUkt0amvWVsnyuuJudQ0oIuk";
-    $link = "yW33zh";
-    break;
-    case "Tue":
-    $pw = "PqLDaUsZ93puSiy5LWv5amMWR";
-    $link = "fQIs9o";
-    break;
-    case "Fri":
-    $pw = "dtuWhN3MO8TSKwPa0UqiJJEuY";
-    $link = "jGh1SF";
-    break;
-    case "Mon":
-    $pw = "0Uc9iCmb9BltIhTLwCoDhj9KQ";
-    $link = "yn5EQZ";
-    break;
-    case "Thu":
-    $pw = "eBokpKcLaYRlq8uiJffciaS2X";
-    $link = "gdu1QD";
-    break;
-    case "Sat":
-    $pw = "ICx0dth9f2IOz8i2aoKXTyKRz";
-    $link = "xVEd6b";
-    break;
-    default:
-    $pw = "g3wHyJCGdYwZJ0fr1qFhlVWKv";
-    $link = "P3O8j8";
-    break;
-  }
-  $read = file_get_contents('key.txt');
-  if($read != $pw){
-    system ("clear");
-    ban1();
-    echo " \033[1;32mCode Password  \033[1;32m: \033[1;97m$link\n";
-    echo "\033[1;32m Link Password  : \033[1;97mhttps://kursibirumysite.000webhostapp.com/\n";
-    $p = readline(" \033[1;32mInput Password \033[1;32m: \033[1;97m");
-    if($p == $pw){
-      system ("clear");
-      ban1();
-      load($p, 'key.txt');
-      loading ("Ceking Password");
-      echo " \033[1;32mSuccessful Login To Script✓✓ \n";
-      sleep(1);
-      goto awalan;
-    }else{
-      system ("clear");
-      ban1();
-      loading ("Ceking Password");
-      echo " \033[1;31mWrong Password, Please Input again!\n";
-      sleep(1);
-      goto awalan;
-    }
   }
 }
 function ban1(){
@@ -241,8 +158,6 @@ system('termux-open https://youtube.com/c/DavillCreative');
 echo ("\033[1;97m Thanks🙏                    \r");
 sleep(2);
 echo ("                        \r");
-//onoff();
-pas();
 $user=Sav("User_agent");
 $cook=Sav("Cookie");
 b:
