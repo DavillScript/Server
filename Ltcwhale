@@ -223,7 +223,7 @@ if(file_exists("wallet")){
             $sum=explode('&',explode('checksum&quot;:&quot;',$res)[1])[0];
             $data='{"fingerprint":{"id":"'.$id.'","name":"login","locale":"en","path":"/","method":"GET"},"serverMemo":{"children":[],"errors":[],"htmlHash":"'.$has.'","data":{"wallet":null,"response":null,"referral":null},"dataMeta":[],"checksum":"'.$sum.'"},"updates":[{"type":"syncInput","payload":{"id":"je0x","name":"wallet","value":"'.$token.'"}},{"type":"callMethod","payload":{"id":"9ve6","method":"start","params":[]}}]}';
             $res=post("https://ltcwhale.com/livewire/message/login",$data,"ltcwhale.com");
-            $res=get("https://ltcwhale.com/account","ltcwhale.com");
+           echo $res=get("https://ltcwhale.com/account","ltcwhale.com");
             $bal=explode('</',explode('id="miningBalance">',$res)[1])[0];
             print slow($bta."[".$m."•".$bta."] ".$h."Wallet  : ".$p."$token\n");
             print slow($bta."[".$m."•".$bta."] ".$h."Balance : ".$p."$bal\n");
