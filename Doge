@@ -121,14 +121,14 @@ system('termux-open https://youtube.com/c/DavillCreative');
 echo ("\033[1;97m Thanks🙏                    \r");
 sleep(2);
 echo ("                        \r");
+$user=Sav("User-agent");
+$cook=Sav("Cookie");
 system("clear");
 ban();
 print Slow("                 \033[1;96m#doge.auto-claim.co#
 \033[1;95m$r");
-  echo slow($h."SC IS ON!! AND READY TO RUN. BY KURSIBIRU.....\n");
+ echo slow($h."SC IS ON!! AND READY TO RUN. BY KURSIBIRU.....\n");
  echo slow("$r");
- $user=Sav("User-agent");
- $cook=Sav("Cookie");
   $ui=array("Host: doge.auto-claim.co","content-type: application/json","accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","user-agent: $user","cookie: $cook");
   $res=get("https://doge.auto-claim.co/api/users",$ui);
   $us=explode('"',explode('"email":"',$res)[1])[0];
