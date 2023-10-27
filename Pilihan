@@ -9,7 +9,8 @@ function server(){
     print "\033[1;92m5. Auto faucet    => https://tutwuri.id/Wtr89LY\n";
     print "\033[1;92m6. Ltcwhale       => https://tutwuri.id/ptgeu\n";
     print "\033[1;92m7. Bnbpayu        => https://tutwuri.id/u8hUm0ss\n";
-    print "\033[1;92m8. Exit\n";
+    print "\033[1;92m8. Auto doge      => https://tutwuri.id/8hylXfv\n";
+    print "\034[1;92m9. Exit\n";
     $pil["pilih"]=readline("\033[1;97mInput Your Number : \033[1;92m");
     print"\033[1;95m$r";
     if($pil["pilih"]==1){
