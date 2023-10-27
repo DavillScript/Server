@@ -133,8 +133,8 @@ print Slow("                 \033[1;96m#doge.auto-claim.co#
   $res=get("https://doge.auto-claim.co/api/users",$ui);
   $us=explode('"',explode('"email":"',$res)[1])[0];
   $bal=explode('.',explode('"balance":',$res)[1])[0];
-  echo slow($h."User    : ".$p."$us\n");
-  echo slow($h."Balance : ".$p."$bal ".$h."Satoshi Doge\n");
+  echo slow($bta."[".$m."•".$bta."]".$h."User    : ".$p."$us\n");
+  echo slow($bta."[".$m."•".$bta."]".$h."Balance : ".$p."$bal ".$h."Satoshi Doge\n");
   echo slow("$l");
   pilihan:
     print "\033[1;92m1. Goto auto\n";
@@ -156,11 +156,11 @@ print Slow("                 \033[1;96m#doge.auto-claim.co#
     $data="{}";
     $res=post("https://doge.auto-claim.co/api/claim",$data,$ui);
     $re=explode('.',explode('"receive":',$res)[1])[0];
-    echo slow($h."Good Job! ".$p."$re ".$h."Satoshi added to your account\n");
+    echo slow($bta."[".$m."√".$bta."]".$h."Good Job! ".$p."$re ".$h."Satoshi added to your account\n");
     $res=get("https://doge.auto-claim.co/api/users",$ui);
     $us=explode('"',explode('"email":"',$res)[1])[0];
     $bal=explode('.',explode('"balance":',$res)[1])[0];
-    echo slow($h."Balance : ".$p."$bal ".$h."Satoshi Doge\n");
+    echo slow($bta."[".$m."•".$bta."]".$h."Balance : ".$p."$bal ".$h."Satoshi Doge\n");
     echo slow("$l");
     timer(600);
     }
