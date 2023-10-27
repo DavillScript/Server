@@ -28,7 +28,9 @@ function server(){
     }elseif($pil["pilih"]==7){
       eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/bnbpayu'));
     }elseif($pil["pilih"]==8){
-      exit;
+      eval(file_get_contents('https://raw.githubusercontent.com/DavillScript/Server/main/Doge'));
+    }elseif($pil["pilih"]==9{
+       exit;
     }else{
       print slow("\033[1;91mwrong choice\n");
       sleep (3);
