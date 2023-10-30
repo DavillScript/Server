@@ -200,6 +200,7 @@ print Slow("                 \033[1;96m#doge.auto-claim.co#
       echo slow($bta."[".$m."√".$bta."]".$h."luckyNumber : ".$p."$su ".$h."Receive : ".$p."$suc\n");
       echo slow($bta."[".$m."•".$bta."]".$h."Balance : ".$p."$bal ".$h."Satoshi Doge\n");
       echo slow("$l");
+      timer(600);
     }else{
       timer(600);
     }
