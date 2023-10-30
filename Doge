@@ -121,13 +121,37 @@ system('termux-open https://youtube.com/c/DavillCreative');
 echo ("\033[1;97m Thanks🙏                    \r");
 sleep(2);
 echo ("                        \r");
+function cap($url, $api, $key){
+   a:
+   $r =  file_get_contents("http://goodxevilpay.pp.ua/in.php?key=".$api."&method=userrecaptcha&googlekey=".$key."&pageurl=".$url);
+   $task = explode('OK|', $r)[1];
+   timer(5);
+   if($task){
+       while(true){
+            $r2 = file_get_contents("http://goodxevilpay.pp.ua/res.php?key=".$api."&action=get&id=".$task);
+            $hasil = explode('OK|', $r2)[1];
+            if($hasil){
+                return $hasil;
+                break;
+            }elseif($r2 == "ERROR_CAPTCHA_UNSOLVABLE"){
+                goto a;
+            }else{
+                echo "proses                 \r";
+                sleep(3);
+            }
+       }
+   }else{
+    goto a;
+  }
+}
 $user=Sav("User-agent");
 $cook=Sav("Cookie");
+$api=Sav("Apikey_xevil");
 system("clear");
 ban();
 print Slow("                 \033[1;96m#doge.auto-claim.co#
 \033[1;95m$r");
- echo slow($h."SC IS ON!! AND READY TO RUN. BY KURSIBIRU.....\n");
+  echo slow($h."SC IS ON!! AND READY TO RUN. BY KURSIBIRU.....\n");
  echo slow("$r");
   $ui=array("Host: doge.auto-claim.co","content-type: application/json","accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7","user-agent: $user","cookie: $cook");
   $res=get("https://doge.auto-claim.co/api/users",$ui);
@@ -137,7 +161,7 @@ print Slow("                 \033[1;96m#doge.auto-claim.co#
   echo slow($bta."[".$m."•".$bta."]".$h."Balance : ".$p."$bal ".$h."Satoshi Doge\n");
   echo slow("$l");
   pilihan:
-    print "\033[1;92m1. Goto auto\n";
+    print "\033[1;92m1. Faucet + Auto\n";
     print "\033[1;92m2. Update cookie\n";
     $pil["pilih"]=readline("\033[1;97mInput Your Number : \033[1;92m");
     print"\033[1;95m$l";
@@ -151,19 +175,35 @@ print Slow("                 \033[1;96m#doge.auto-claim.co#
       goto pilihan;
     }
   auto:
-    while(true){
+  while(true){
     $res=get("https://doge.auto-claim.co/dashboard/auto-faucet",$ui);
     $data="{}";
     $res=post("https://doge.auto-claim.co/api/claim",$data,$ui);
     $re=explode('.',explode('"receive":',$res)[1])[0];
-    echo slow($bta."[".$m."√".$bta."]".$h."Good Job! ".$p."$re ".$h."Satoshi added to your account\n");
+    if($re){
+      echo slow($bta."[".$m."√".$bta."]".$h."Good Job! ".$p."$re ".$h."Satoshi added to your account\n");
+      echo slow("$l");
+    }else{
+      echo slow($m."Sabar cokk timer masih jalan di alihkan ke manual!!!\n");
+      echo slow("$l");
+    }
+    $res=get("https://doge.auto-claim.co/api/roll/time",$ui);
+    $cap=cap("https://doge.auto-claim.co/api/roll/time",$api,"6LeX8qcoAAAAAE9EPOhQlLsOJRyUfYkvPLNhHMml");
+    $data='{"token_recaptcha":"'.$cap.'"}';
+    $res=post("https://doge.auto-claim.co/api/roll",$data,$ui);
+    $su=explode(',',explode('luckyNumber":',$res)[1])[0];
+    $suc=explode(',',explode('receive":',$res)[1])[0];
     $res=get("https://doge.auto-claim.co/api/users",$ui);
     $us=explode('"',explode('"email":"',$res)[1])[0];
     $bal=explode('.',explode('"balance":',$res)[1])[0];
-    echo slow($bta."[".$m."•".$bta."]".$h."Balance : ".$p."$bal ".$h."Satoshi Doge\n");
-    echo slow("$l");
-    timer(600);
+    if($su){
+      echo slow($bta."[".$m."√".$bta."]".$h."luckyNumber : ".$p."$su ".$h."Receive : ".$p."$suc\n");
+      echo slow($bta."[".$m."•".$bta."]".$h."Balance : ".$p."$bal ".$h."Satoshi Doge\n");
+      echo slow("$l");
+    }else{
+      timer(600);
     }
+  }
     up:
       if(file_exists("Cookie")){
         system("rm Cookie");
