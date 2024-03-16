@@ -7,7 +7,7 @@ function h(){
 $ua=h();
 function on(){
   $p=Sav("Pin");
-  $res=Curl("https://faucetone.my.id/admin/function/data.php",h());
+  $res=get("https://faucetone.my.id/admin/function/data.php",$ua);
   $li=explode('</td>',explode('</td><td>',$res)[1])[0];
   $no=explode("</td>",explode("$li</td><td>",$res)[1])[0];
   $on=explode("</td>",explode("$no</td><td>",$res)[1])[0];
@@ -15,7 +15,7 @@ function on(){
     echo "\033[1;91mScript off silahkan hubungi admin\n";
     exit;
   }
-  $res=Curl("https://faucetone.my.id/admin/function/status.php",h());
+  $res=get("https://faucetone.my.id/admin/function/status.php",$ua);
   $pin=explode("</",explode("<td>$p</td><td>",$res)[1])[0];
   if($pin=="1"){
     $status="ON";
