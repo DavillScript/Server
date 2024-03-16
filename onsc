@@ -1,5 +1,5 @@
-$ua = array("Host: faucetone.my.id","user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36","accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
 function on(){
+  $ua = array("Host: faucetone.my.id","user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36","accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
   $p=Sav("Pin");
   $res=get("https://faucetone.my.id/admin/function/data.php",$ua);
   $li=explode('</td>',explode('</td><td>',$res)[1])[0];
