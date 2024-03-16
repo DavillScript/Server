@@ -1,6 +1,5 @@
 function on(){
   $p=Sav("Pin");
-  $res=Curl("https://faucetone.my.id/admin/password/",h());
   $res=Curl("https://faucetone.my.id/admin/function/data.php",h());
   $li=explode('</td>',explode('</td><td>',$res)[1])[0];
   $no=explode("</td>",explode("$li</td><td>",$res)[1])[0];
@@ -10,8 +9,8 @@ function on(){
     exit;
   }
   $res=Curl("https://faucetone.my.id/admin/function/status.php",h());
-  $ip=explode("</",explode("<td>$p</td><td>",$res)[1])[0];
-  if($ip=="1"){
+  $pin=explode("</",explode("<td>$p</td><td>",$res)[1])[0];
+  if($pin=="1"){
     $status="ON";
   }else{
     system('clear');
