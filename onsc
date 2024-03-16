@@ -1,3 +1,10 @@
+function h(){
+  $h[]="Host: faucetone.my.id";
+  $h[]="user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36";
+  $h[]="accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7";
+  return $h;
+}
+$ua=h();
 function on(){
   $p=Sav("Pin");
   $res=Curl("https://faucetone.my.id/admin/function/data.php",h());
