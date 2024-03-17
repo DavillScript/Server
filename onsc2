@@ -24,12 +24,13 @@ if($st=="off"){
       $status="ON";
     }else{
       system('clear');
-    ban1();
-    echo ("\033[1;97m Please Aktivasi SC🙏\n");
-    sleep(2);
-    system("termux-open $li");
-    exit;
+      ban1();
+      echo ("\033[1;97m Please Aktivasi SC🙏\n");
+      sleep(2);
+      system("termux-open $li");
+      exit;
+    }
+    return $status;
   }
-  return $status;
+  on();
 }
-on();
