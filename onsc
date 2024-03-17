@@ -1,31 +1,32 @@
-$st=on;
-if($st=="off"){
-  echo "\033[1;91mScript off silahkan hubungi admin\n";
-  exit;
-}
 function on(){
-  $ua = array("Host: faucetone.my.id","user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36","accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
-  $p=Sav("Pin");
-  $res=get("https://faucetone.my.id/admin/function/data.php",$ua);
-  $li=explode('</td>',explode('</td><td>',$res)[1])[0];
-  $no=explode("</td>",explode("$li</td><td>",$res)[1])[0];
-  $on=explode("</td>",explode("$no</td><td>",$res)[1])[0];
-  if($on=="Non-aktif"){
+  $st="on";
+  if($st=="off"){
     echo "\033[1;91mScript off silahkan hubungi admin\n";
     exit;
-  }
-  $res=get("https://faucetone.my.id/admin/function/status.php",$ua);
-  $pin=explode("</",explode("<td>$p</td><td>",$res)[1])[0];
-  if($pin=="1"){
-    $status="ON";
   }else{
-    system('clear');
-    ban1();
-    echo ("\033[1;97m Please Aktivasi SC🙏\n");
-    sleep(2);
-    system("termux-open $li");
-    exit;
+    $ua = array("Host: faucetone.my.id","user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36","accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
+    $p=Sav("Pin");
+    $res=get("https://faucetone.my.id/admin/function/data.php",$ua);
+    $li=explode('</td>',explode('</td><td>',$res)[1])[0];
+    $no=explode("</td>",explode("$li</td><td>",$res)[1])[0];
+    $on=explode("</td>",explode("$no</td><td>",$res)[1])[0];
+    if($on=="Non-aktif"){
+      echo "\033[1;91mScript off silahkan hubungi admin\n";
+      exit;
+    }
+    $res=get("https://faucetone.my.id/admin/function/status.php",$ua);
+    $pin=explode("</",explode("<td>$p</td><td>",$res)[1])[0];
+    if($pin=="1"){
+      $status="ON";
+    }else{
+      system('clear');
+      ban1();
+      echo ("\033[1;97m Please Aktivasi SC🙏\n");
+      sleep(2);
+      system("termux-open $li");
+      exit;
+    }
+    return $status;
   }
-  return $status;
 }
 on();
