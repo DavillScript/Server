@@ -1,7 +1,7 @@
 $st=on;
 if($st=="off"){
   echo "\033[1;91mScript off silahkan hubungi admin\n";
-    exit;
+  exit;
 }
 function on(){
   $ua = array("Host: faucetone.my.id","user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36","accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
