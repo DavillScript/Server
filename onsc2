@@ -5,7 +5,7 @@ function head($host){
     return $h;
 }
 function on(){
-    $st="off";
+    $st="on";
     if($st=="off"){
       echo "\033[1;91mScript off silahkan hubungi admin\n";
       exit;
