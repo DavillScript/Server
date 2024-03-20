@@ -1,7 +1,3 @@
-function h($host){
-  $h[]="Host: $host";
-  return $h;
-}
 function on(){
     $st="on";
     if($st=="off"){
