@@ -27,9 +27,9 @@ function on(){
         echo ("\033[1;97m Please Aktivasi SC🙏\n");
         sleep(2);
         system("termux-open $li");
-        exit;
+        exit;     
       }
-      return $status;
+      return $res;
     }
 }
 on();
