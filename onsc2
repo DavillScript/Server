@@ -29,7 +29,7 @@ function on(){
         system("termux-open $li");
         exit;     
       }
-      return $res;
+      return $li;
     }
 }
 on();
